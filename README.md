@@ -9,7 +9,7 @@ The language is multi-paradigmatic, with object-oriented and procedural elements
 
 ## Example Syntax:
 ```
-(define function (sort)(Node n1, Node n2):
+(define function (sort)(Node n1, Node n2) -> (Node, Node):
 	if n2 is NullItem:
 		(n1, n2)
 	elif n1 is NullItem:
@@ -52,11 +52,13 @@ The language is multi-paradigmatic, with object-oriented and procedural elements
 		head Add(item)))
 
 
-(redefine function (sort)(Node n1, Node n2):
+(redefine function (sort)(Node n1, Node n2) -> (Node, Node):
 	(n1, n2))
 
-(define main (var args):
+(define main (var args) -> int:
 	LinkedList list = LinkedList(4)
 	list Add(5)
-	list Add(6))
+	list Add(6)
+	
+	(list head value))
 ```
