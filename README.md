@@ -2,7 +2,7 @@
 A project to write a compiler for a new programming language with no name as of yet.
 
 ## Implementation
-The first form of the compiler is intended to be written in [Racket](https://racket-lang.org/).
+The first form of the compiler is intended to be written in C#.
 
 ## Language Details
 The language is multi-paradigmatic, with object-oriented and procedural elements. The final form of the language will have type inference through the ```var``` keyword, and will be statically and strongly typed. Many minor typographical changes between this language and the traditional C-like syntax have been made for educational purposes.
