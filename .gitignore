@@ -2,3 +2,13 @@
 *.bat
 obj/
 bin/
+
+###############
+#    folder   #
+###############
+/**/DROP/
+/**/TEMP/
+/**/packages/
+/**/bin/
+/**/obj/
+_site
