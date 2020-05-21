@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Xunit;
 
 using GMOKeefe.Compiler.Lexer;
@@ -8,17 +9,20 @@ namespace GMOKeefe.Compiler.Tests
     public class LexerTest
     {
         [Fact]
-        public void TestText()
+        public void TestTokenize1()
         {
             // Arrange
-            string expectedText = "(define main() -> int:\n    (1))";
-            Tokenizer l = new Tokenizer("../../../example/constant.mza");
+            Tokenizer t = new Tokenizer("../../../example/constant.mza");
+            List<string> expectedList = new List<string>(12) {
+                "(", "define", "main", "(", ")", "->", "int", ":",
+                "(", "1", ")", ")"
+            };
 
             // Act
-            string outText = l.Text();
+            List<string> outList = t.Tokens();
 
             // Assert
-            Assert.Equal(expectedText, outText);
+            Assert.Equal(expectedList, outList);
         }
     }
 }

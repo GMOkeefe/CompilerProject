@@ -7,8 +7,14 @@ namespace GMOKeefe.ConsoleRunner
     {
         static void Main(string[] args)
         {
-            FullReader fr = new FullReader("./example/constant.mza");
-            Console.WriteLine(fr.Read());
+            Tokenizer t = new Tokenizer("./example/constant.mza");
+
+            Console.Write("Tokens: { ");
+            foreach (var s in t.Tokens())
+            {
+                Console.Write(s + ", ");
+            }
+            Console.WriteLine("\b\b }");
         }
     }
 }

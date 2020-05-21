@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Security;
+using System.Collections.Generic;
 
 namespace GMOKeefe.Compiler.Lexer
 {
@@ -9,6 +10,8 @@ namespace GMOKeefe.Compiler.Lexer
     /// </summary>
     public class Tokenizer
     {
+        private const string SEPARABLE_CHARS = "(){}[],.^!~\"\';:";
+        private const string SEPARATOR_CHARS = " \n\r\t";
         private const long MAX_LENGTH = 2048;
         private IReader reader;
 
@@ -107,12 +110,46 @@ namespace GMOKeefe.Compiler.Lexer
         }
 
         /// <summary>
-        /// Returns the full text of the code.
+        /// Tokenizes the text file in a way that is more interpretable to the compiler.
         /// </summary>
         /// <returns>
-        /// The text of the file given to the Lexer.
+        /// The tokenized list.
         /// </returns>
-        public string Text()
+        public List<string> Tokens()
+        {
+            List<string> tokens = new List<string>();
+            string text = this.Text();
+
+            string word = "";
+            foreach (var c in text)
+            {
+                if (SEPARABLE_CHARS.Contains(c.ToString()))
+                {
+                    if (word != "")
+                    {
+                        tokens.Add(word);
+                    }
+                    tokens.Add(c.ToString());
+
+                    word = "";
+                }
+                else if (SEPARATOR_CHARS.Contains(c.ToString()))
+                {
+                    if (word != "")
+                    {
+                        tokens.Add(word);
+                        word = "";
+                    }
+                }
+                else {
+                    word += c.ToString();
+                }
+            }
+
+            return tokens;
+        }
+
+        private string Text()
         {
             string text = "";
 

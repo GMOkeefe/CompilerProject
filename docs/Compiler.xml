@@ -100,12 +100,12 @@
             Thrown when the file path is null.
             </exception>
         </member>
-        <member name="M:GMOKeefe.Compiler.Lexer.Tokenizer.Text">
+        <member name="M:GMOKeefe.Compiler.Lexer.Tokenizer.Tokens">
             <summary>
-            Returns the full text of the code.
+            Tokenizes the text file in a way that is more interpretable to the compiler.
             </summary>
             <returns>
-            The text of the file given to the Lexer.
+            The tokenized list.
             </returns>
         </member>
     </members>
