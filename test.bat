@@ -1,1 +1,1 @@
-dotnet test --project ./src/GMOKeefe/Compiler.Tests/Compiler.Tests.csproj
+dotnet test ./src/GMOKeefe/Compiler.Tests/Compiler.Tests.csproj
