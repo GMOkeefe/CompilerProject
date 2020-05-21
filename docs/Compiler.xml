@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Compiler</name>
+    </assembly>
+    <members>
+        <member name="T:GMOKeefe.Compiler.Lexer.FullReader">
+            <summary>
+            Reads the given text file in its entirety.
+            </summary>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Lexer.FullReader.#ctor(System.String)">
+            <summary>
+            Creates a FullReader given the path of the file to be read.
+            </summary>
+            <param name="filePath">
+            The path of the file to be read.
+            </param>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Lexer.FullReader.Done">
+            <summary>
+            Indicates whether the FullReader has been used or not.
+            </summary>
+            <returns>
+            A boolean value indicating if the FullReader has been fully used.
+            </returns>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Lexer.FullReader.Read">
+            <summary>
+            Reads the text file.
+            </summary>
+            <returns>
+            The entire contents of the text file.
+            </returns>
+        </member>
+        <member name="T:GMOKeefe.Compiler.Lexer.IReader">
+            <summary>
+            The Reader interface
+            Defines the functionality necessary for the Lexer to read code
+            </summary>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Lexer.IReader.Done">
+            <summary>
+            Indicates whether the Reader has been used or not.
+            </summary>
+            <returns>
+            A boolean value indicating if the Reader has been fully used.
+            </returns>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Lexer.IReader.Read">
+            <summary>
+            Reads the text file, either whole or in part.
+            </summary>
+            <returns>
+            Some portion of the text in the text file.
+            </returns>
+        </member>
+        <member name="T:GMOKeefe.Compiler.Lexer.Lexer">
+            <summary>
+            Tokenizes text files for parsing.
+            </summary>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Lexer.Lexer.echo(System.String)">
+            <summary>
+            Returns the input string for testing purposes.
+            </summary>
+            <param name="input">
+            String to be returned.
+            </param>
+            <returns>
+            The input string.
+            </returns>
+        </member>
+        <member name="T:GMOKeefe.Compiler.Lexer.LineReader">
+            <summary>
+            Reads the given text file line-by-line.
+            </summary>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Lexer.LineReader.#ctor(System.String)">
+            <summary>
+            Creates a LineReader given the path of the file to be read.
+            </summary>
+            <param name="filePath">
+            The path of the file to be read.
+            </param>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Lexer.LineReader.Done">
+            <summary>
+            Indicates whether the LineReader has been used or not.
+            </summary>
+            <returns>
+            A boolean value indicating if the LineReader has been fully used.
+            </returns>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Lexer.LineReader.Read">
+            <summary>
+            Reads one line of the text file.
+            </summary>
+            <returns>
+            One line of the text file.
+            </returns>
+        </member>
+    </members>
+</doc>
