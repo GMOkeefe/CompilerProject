@@ -9,4 +9,4 @@
     
      steps:
        - checkout
-       - run: test.bat
+       - run: dotnet test ./src/GMOKeefe/Compiler.Tests/Compiler.Tests.csproj
