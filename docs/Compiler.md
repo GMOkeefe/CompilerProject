@@ -1,11 +1,11 @@
-# Compiler.dll v.0.1.1 API documentation
+# Compiler.dll v.1.0.0.0 API documentation
 
 # All types
 
 |   |   |   |
 |---|---|---|
-| [FullReader Class](#fullreader-class) | [Lexer Class](#lexer-class) |   |
-| [IReader Class](#ireader-class) | [LineReader Class](#linereader-class) |   |
+| [FullReader Class](#fullreader-class) | [LineReader Class](#linereader-class) |   |
+| [IReader Class](#ireader-class) | [Tokenizer Class](#tokenizer-class) |   |
 # FullReader Class
 
 Namespace: GMOKeefe.Compiler.Lexer
@@ -36,17 +36,6 @@ Defines the functionality necessary for the Lexer to read code.
 |---|---|---|
 | **Done()** | bool | Indicates whether the Reader has been used or not. |
 | **Read()** | string | Reads the text file, either whole or in part. |
-# Lexer Class
-
-Namespace: GMOKeefe.Compiler.Lexer
-
-Tokenizes text files for parsing.
-
-## Methods
-
-| Name | Returns | Summary |
-|---|---|---|
-| **echo(string input)** | string | Returns the input string for testing purposes. |
 # LineReader Class
 
 Namespace: GMOKeefe.Compiler.Lexer
@@ -64,3 +53,19 @@ Reads the given text file line-by-line.
 |---|---|---|
 | **Done()** | bool | Indicates whether the LineReader has been used or not. |
 | **Read()** | string | Reads one line of the text file. |
+# Tokenizer Class
+
+Namespace: GMOKeefe.Compiler.Lexer
+
+Tokenizes text files for parsing.
+
+## Constructors
+
+| Name | Summary |
+|---|---|
+| **Tokenizer(string path)** | Constructs a Tokenizer to break down the given file. |
+## Methods
+
+| Name | Returns | Summary |
+|---|---|---|
+| **Text()** | string | Returns the full text of the code. |

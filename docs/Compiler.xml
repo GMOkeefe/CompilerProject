@@ -55,22 +55,6 @@
             Some portion of the text in the text file.
             </returns>
         </member>
-        <member name="T:GMOKeefe.Compiler.Lexer.Lexer">
-            <summary>
-            Tokenizes text files for parsing.
-            </summary>
-        </member>
-        <member name="M:GMOKeefe.Compiler.Lexer.Lexer.echo(System.String)">
-            <summary>
-            Returns the input string for testing purposes.
-            </summary>
-            <param name="input">
-            String to be returned.
-            </param>
-            <returns>
-            The input string.
-            </returns>
-        </member>
         <member name="T:GMOKeefe.Compiler.Lexer.LineReader">
             <summary>
             Reads the given text file line-by-line.
@@ -98,6 +82,30 @@
             </summary>
             <returns>
             One line of the text file.
+            </returns>
+        </member>
+        <member name="T:GMOKeefe.Compiler.Lexer.Tokenizer">
+            <summary>
+            Tokenizes text files for parsing.
+            </summary>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Lexer.Tokenizer.#ctor(System.String)">
+            <summary>
+            Constructs a Tokenizer to break down the given file.
+            </summary>
+            <param name="path">
+            The path of the file to be lexed.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when the file path is null.
+            </exception>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Lexer.Tokenizer.Text">
+            <summary>
+            Returns the full text of the code.
+            </summary>
+            <returns>
+            The text of the file given to the Lexer.
             </returns>
         </member>
     </members>
