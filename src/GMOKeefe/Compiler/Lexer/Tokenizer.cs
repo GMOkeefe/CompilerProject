@@ -118,7 +118,7 @@ namespace GMOKeefe.Compiler.Lexer
 
             while (!reader.Done())
             {
-                text += reader.Read() + "\n";
+                text += reader.Read();
             }
 
             return text;

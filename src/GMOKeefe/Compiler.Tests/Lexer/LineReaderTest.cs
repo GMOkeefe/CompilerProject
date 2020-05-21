@@ -4,17 +4,21 @@ using GMOKeefe.Compiler.Lexer;
 
 namespace GMOKeefe.Compiler.Tests.Lexer
 {
-    public class FullReaderTest
+    public class LineReaderTest
     {
         [Fact]
         public void TestRead()
         {
             // Arrange
             string expectedText = "(define main() -> int:\n    (1))";
-            FullReader fr = new FullReader("../../../example/constant.mza");
+            LineReader lr = new LineReader("../../../example/constant.mza");
 
             // Act
-            string outText = fr.Read();
+            string outText = "";
+            while (!lr.Done())
+            {
+                outText += lr.Read();
+            }
 
             // Assert
             Assert.Equal(expectedText, outText);
@@ -24,13 +28,16 @@ namespace GMOKeefe.Compiler.Tests.Lexer
         public void TestDone()
         {
             //Arrange
-            FullReader fr = new FullReader("../../../example/constant.mza");
+            LineReader lr = new LineReader("../../../example/constant.mza");
 
             // Act
-            fr.Read();
+            while (!lr.Done())
+            {
+                lr.Read();
+            }
 
             // Assert
-            Assert.True(fr.Done());
+            Assert.True(lr.Done());
         }
     }
 }
