@@ -7,7 +7,6 @@ namespace GMOKeefe.Compiler.Lexer
     /// </summary>
     public class LineReader : IReader
     {
-        private bool done;
         private string filePath;
 
         private StreamReader reader;
@@ -21,7 +20,6 @@ namespace GMOKeefe.Compiler.Lexer
         public LineReader(string filePath)
         {
             this.filePath = filePath;
-            this.done = false;
 
             this.reader = new StreamReader(filePath);
         }
@@ -34,7 +32,11 @@ namespace GMOKeefe.Compiler.Lexer
         /// </returns>
         public bool Done()
         {
-            return done;
+            if (reader == null)
+            {
+                return true;
+            }
+            return reader.EndOfStream;
         }
 
         /// <summary>
@@ -45,17 +47,20 @@ namespace GMOKeefe.Compiler.Lexer
         /// </returns>
         public string Read()
         {
-            string line;
-            if ((line = reader.ReadLine()) == null)
+            string line = reader.ReadLine();
+
+            if (Done())
             {
-                done = true;
                 reader.Close();
-                return "";
+                reader.Dispose();
+                reader = null;
             }
             else
             {
-                return line;
+                line += "\n";
             }
+
+            return line;
         }
     }
 }
