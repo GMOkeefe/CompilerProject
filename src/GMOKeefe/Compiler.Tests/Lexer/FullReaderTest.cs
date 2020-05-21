@@ -10,7 +10,7 @@ namespace GMOKeefe.Compiler.Tests.Lexer
         public void TestRead()
         {
             // Arrange
-            string expectedText = "(define main() -> int:\n    (1))";
+            string expectedText = "(define main() -> int:" + System.Environment.NewLine + "    (1))";
             FullReader fr = new FullReader("../../../example/constant.mza");
 
             // Act

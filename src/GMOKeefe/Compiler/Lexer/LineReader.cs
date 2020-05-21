@@ -57,7 +57,7 @@ namespace GMOKeefe.Compiler.Lexer
             }
             else
             {
-                line += "\n";
+                line += System.Environment.NewLine;
             }
 
             return line;

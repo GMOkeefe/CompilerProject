@@ -10,7 +10,7 @@ namespace GMOKeefe.Compiler.Tests.Lexer
         public void TestRead()
         {
             // Arrange
-            string expectedText = "(define main() -> int:\n    (1))";
+            string expectedText = "(define main() -> int:" + System.Environment.NewLine + "    (1))";
             LineReader lr = new LineReader("../../../example/constant.mza");
 
             // Act
