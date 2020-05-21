@@ -4,8 +4,9 @@
 
 |   |   |   |
 |---|---|---|
-| [FullReader Class](#fullreader-class) | [LineReader Class](#linereader-class) |   |
-| [IReader Class](#ireader-class) | [Tokenizer Class](#tokenizer-class) |   |
+| [FullReader Class](#fullreader-class) | [Tokenizer Class](#tokenizer-class) | [IExpression Class](#iexpression-class) |
+| [IReader Class](#ireader-class) | [BoolExpr Class](#boolexpr-class) | [IValue Class](#ivalue-class) |
+| [LineReader Class](#linereader-class) | [BoolValue Class](#boolvalue-class) |   |
 # FullReader Class
 
 Namespace: GMOKeefe.Compiler.Lexer
@@ -68,4 +69,58 @@ Tokenizes text files for parsing.
 
 | Name | Returns | Summary |
 |---|---|---|
-| **Text()** | string | Returns the full text of the code. |
+| **Tokens()** | List\<string\> | Tokenizes the text file in a way that is more interpretable to the compiler. |
+# BoolExpr Class
+
+Namespace: GMOKeefe.Compiler.Syntax
+
+Expression that contains a boolean value.
+
+## Constructors
+
+| Name | Summary |
+|---|---|
+| **BoolExpr(bool value)** | Creates a BoolExpr based on a given boolean. |
+## Methods
+
+| Name | Returns | Summary |
+|---|---|---|
+| **Eval()** | [IValue](#ivalue-class) | Returns the IValue that this Expression evaluates to. |
+# BoolValue Class
+
+Namespace: GMOKeefe.Compiler.Syntax
+
+Representation of a boolean value.
+
+## Constructors
+
+| Name | Summary |
+|---|---|
+| **BoolValue(bool value)** | Creates a BoolValue based on the given value. |
+## Methods
+
+| Name | Returns | Summary |
+|---|---|---|
+| **Value()** | Object | Retrieves the actual value of this IValue. |
+# IExpression Class
+
+Namespace: GMOKeefe.Compiler.Syntax
+
+Interface for any AST Expression.
+
+## Methods
+
+| Name | Returns | Summary |
+|---|---|---|
+| **Eval()** | [IValue](#ivalue-class) | Evaluates the expression and returns the value. |
+# IValue Class
+
+Namespace: GMOKeefe.Compiler.Syntax
+
+The abstract representation of a value.
+
+## Methods
+
+| Name | Returns | Summary |
+|---|---|---|
+| **Value()** | Object | Generates the native value. |

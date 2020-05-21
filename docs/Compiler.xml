@@ -108,5 +108,73 @@
             The tokenized list.
             </returns>
         </member>
+        <member name="T:GMOKeefe.Compiler.Syntax.BoolExpr">
+            <summary>
+            Expression that contains a boolean value.
+            </summary>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Syntax.BoolExpr.#ctor(System.Boolean)">
+            <summary>
+            Creates a BoolExpr based on a given boolean.
+            </summary>
+            <param name="value">
+            The boolean that sets the value.
+            </param>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Syntax.BoolExpr.Eval">
+            <summary>
+            Returns the IValue that this Expression evaluates to.
+            </summary>
+            <returns>
+            The IValue that represents the value of this Expression.
+            </returns>
+        </member>
+        <member name="T:GMOKeefe.Compiler.Syntax.BoolValue">
+            <summary>
+            Representation of a boolean value.
+            </summary>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Syntax.BoolValue.#ctor(System.Boolean)">
+            <summary>
+            Creates a BoolValue based on the given value.
+            </summary>
+            <param name="value">
+            The boolean that sets the value.
+            </param>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Syntax.BoolValue.Value">
+            <summary>
+            Retrieves the actual value of this IValue.
+            </summary>
+            <returns>
+            The boolean that represents the actual value.
+            </returns>
+        </member>
+        <member name="T:GMOKeefe.Compiler.Syntax.IExpression">
+            <summary>
+            Interface for any AST Expression.
+            </summary>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Syntax.IExpression.Eval">
+            <summary>
+            Evaluates the expression and returns the value.
+            </summary>
+            <returns>
+            The IValue representing the value of the expression.
+            </returns>
+        </member>
+        <member name="T:GMOKeefe.Compiler.Syntax.IValue">
+            <summary>
+            The abstract representation of a value.
+            </summary>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Syntax.IValue.Value">
+            <summary>
+            Generates the native value.
+            </summary>
+            <returns>
+            The natively represented value.
+            </returns>
+        </member>
     </members>
 </doc>
