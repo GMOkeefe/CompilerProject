@@ -1,3 +1,5 @@
+using System;
+
 namespace GMOKeefe.Compiler.Lexer
 {
     /// <summary>
@@ -39,14 +41,21 @@ namespace GMOKeefe.Compiler.Lexer
         /// </returns>
         public string Read()
         {
-            if (done != true)
+            try
             {
-                done = true;
-                return System.IO.File.ReadAllText(filePath);
+                if (done != true)
+                {
+                    done = true;
+                    return System.IO.File.ReadAllText(filePath);
+                }
+                else
+                {
+                    return "";
+                }
             }
-            else
+            catch (Exception e)
             {
-                return "";
+                throw e;
             }
         }
     }
