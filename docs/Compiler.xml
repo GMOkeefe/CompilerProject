@@ -35,8 +35,8 @@
         </member>
         <member name="T:GMOKeefe.Compiler.Lexer.IReader">
             <summary>
-            The Reader interface
-            Defines the functionality necessary for the Lexer to read code
+            The Reader interface.\
+            Defines the functionality necessary for the Lexer to read code.
             </summary>
         </member>
         <member name="M:GMOKeefe.Compiler.Lexer.IReader.Done">

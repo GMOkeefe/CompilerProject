@@ -27,8 +27,8 @@ Reads the given text file in its entirety.
 
 Namespace: GMOKeefe.Compiler.Lexer
 
-The Reader interface
-Defines the functionality necessary for the Lexer to read code
+The Reader interface.\
+Defines the functionality necessary for the Lexer to read code.
 
 ## Methods
 

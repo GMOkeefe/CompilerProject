@@ -1,8 +1,8 @@
 namespace GMOKeefe.Compiler.Lexer
 {
     /// <summary>
-    /// The Reader interface
-    /// Defines the functionality necessary for the Lexer to read code
+    /// The Reader interface.\
+    /// Defines the functionality necessary for the Lexer to read code.
     /// </summary>
     public interface IReader
     {
