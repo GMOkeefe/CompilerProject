@@ -1,5 +1,4 @@
 .vscode
-*.bat
 obj/
 bin/
 
