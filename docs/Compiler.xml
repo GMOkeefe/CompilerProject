@@ -4,12 +4,12 @@
         <name>Compiler</name>
     </assembly>
     <members>
-        <member name="T:GMOKeefe.Compiler.Lexer.FullReader">
+        <member name="T:GMOKeefe.Compiler.Lex.FullReader">
             <summary>
             Reads the given text file in its entirety.
             </summary>
         </member>
-        <member name="M:GMOKeefe.Compiler.Lexer.FullReader.#ctor(System.String)">
+        <member name="M:GMOKeefe.Compiler.Lex.FullReader.#ctor(System.String)">
             <summary>
             Creates a FullReader given the path of the file to be read.
             </summary>
@@ -17,7 +17,7 @@
             The path of the file to be read.
             </param>
         </member>
-        <member name="M:GMOKeefe.Compiler.Lexer.FullReader.Done">
+        <member name="M:GMOKeefe.Compiler.Lex.FullReader.Done">
             <summary>
             Indicates whether the FullReader has been used or not.
             </summary>
@@ -25,7 +25,7 @@
             A boolean value indicating if the FullReader has been fully used.
             </returns>
         </member>
-        <member name="M:GMOKeefe.Compiler.Lexer.FullReader.Read">
+        <member name="M:GMOKeefe.Compiler.Lex.FullReader.Read">
             <summary>
             Reads the text file.
             </summary>
@@ -33,13 +33,13 @@
             The entire contents of the text file.
             </returns>
         </member>
-        <member name="T:GMOKeefe.Compiler.Lexer.IReader">
+        <member name="T:GMOKeefe.Compiler.Lex.IReader">
             <summary>
             The Reader interface.\
             Defines the functionality necessary for the Lexer to read code.
             </summary>
         </member>
-        <member name="M:GMOKeefe.Compiler.Lexer.IReader.Done">
+        <member name="M:GMOKeefe.Compiler.Lex.IReader.Done">
             <summary>
             Indicates whether the Reader has been used or not.
             </summary>
@@ -47,7 +47,7 @@
             A boolean value indicating if the Reader has been fully used.
             </returns>
         </member>
-        <member name="M:GMOKeefe.Compiler.Lexer.IReader.Read">
+        <member name="M:GMOKeefe.Compiler.Lex.IReader.Read">
             <summary>
             Reads the text file, either whole or in part.
             </summary>
@@ -55,12 +55,12 @@
             Some portion of the text in the text file.
             </returns>
         </member>
-        <member name="T:GMOKeefe.Compiler.Lexer.LineReader">
+        <member name="T:GMOKeefe.Compiler.Lex.LineReader">
             <summary>
             Reads the given text file line-by-line.
             </summary>
         </member>
-        <member name="M:GMOKeefe.Compiler.Lexer.LineReader.#ctor(System.String)">
+        <member name="M:GMOKeefe.Compiler.Lex.LineReader.#ctor(System.String)">
             <summary>
             Creates a LineReader given the path of the file to be read.
             </summary>
@@ -68,7 +68,7 @@
             The path of the file to be read.
             </param>
         </member>
-        <member name="M:GMOKeefe.Compiler.Lexer.LineReader.Done">
+        <member name="M:GMOKeefe.Compiler.Lex.LineReader.Done">
             <summary>
             Indicates whether the LineReader has been used or not.
             </summary>
@@ -76,7 +76,7 @@
             A boolean value indicating if the LineReader has been fully used.
             </returns>
         </member>
-        <member name="M:GMOKeefe.Compiler.Lexer.LineReader.Read">
+        <member name="M:GMOKeefe.Compiler.Lex.LineReader.Read">
             <summary>
             Reads one line of the text file.
             </summary>
@@ -84,12 +84,12 @@
             One line of the text file.
             </returns>
         </member>
-        <member name="T:GMOKeefe.Compiler.Lexer.Organizer">
+        <member name="T:GMOKeefe.Compiler.Lex.Organizer">
             <summary>
             Organizes a list of string tokens into a hierarchical structure based on opening and closing symbols.
             </summary>
         </member>
-        <member name="M:GMOKeefe.Compiler.Lexer.Organizer.#ctor(System.Collections.Generic.List{System.String})">
+        <member name="M:GMOKeefe.Compiler.Lex.Organizer.#ctor(System.Collections.Generic.List{System.String})">
             <summary>
             Creates a new Organizer based on a list of string tokens.
             </summary>
@@ -97,7 +97,7 @@
             The string tokens (presumably given by the Tokenizer).
             </param>
         </member>
-        <member name="M:GMOKeefe.Compiler.Lexer.Organizer.Organize">
+        <member name="M:GMOKeefe.Compiler.Lex.Organizer.Organize">
             <summary>
             Organizes the string tokens into a list of IBodys.
             </summary>
@@ -105,12 +105,12 @@
             The hierarchical list of IBodys.
             </returns>
         </member>
-        <member name="T:GMOKeefe.Compiler.Lexer.Tokenizer">
+        <member name="T:GMOKeefe.Compiler.Lex.Tokenizer">
             <summary>
             Tokenizes text files for parsing.
             </summary>
         </member>
-        <member name="M:GMOKeefe.Compiler.Lexer.Tokenizer.#ctor(System.String)">
+        <member name="M:GMOKeefe.Compiler.Lex.Tokenizer.#ctor(System.String)">
             <summary>
             Constructs a Tokenizer to break down the given file.
             </summary>
@@ -121,7 +121,7 @@
             Thrown when the file path is null.
             </exception>
         </member>
-        <member name="M:GMOKeefe.Compiler.Lexer.Tokenizer.#ctor(GMOKeefe.Compiler.Lexer.IReader)">
+        <member name="M:GMOKeefe.Compiler.Lex.Tokenizer.#ctor(GMOKeefe.Compiler.Lex.IReader)">
             <summary>
             Constructs a Tokenizer to utilize the given IReader to break down the text.
             </summary>
@@ -129,7 +129,7 @@
             The IReader to get the text of the file.
             </param>
         </member>
-        <member name="M:GMOKeefe.Compiler.Lexer.Tokenizer.Tokens">
+        <member name="M:GMOKeefe.Compiler.Lex.Tokenizer.Tokens">
             <summary>
             Tokenizes the text file in a way that is more interpretable to the compiler.
             </summary>
@@ -137,12 +137,12 @@
             The tokenized list.
             </returns>
         </member>
-        <member name="T:GMOKeefe.Compiler.Parser.IBody">
+        <member name="T:GMOKeefe.Compiler.Parse.IBody">
             <summary>
             An interface that represents the union of the string and the list of IBodys.
             </summary>
         </member>
-        <member name="M:GMOKeefe.Compiler.Parser.IBody.GetHashCode">
+        <member name="M:GMOKeefe.Compiler.Parse.IBody.GetHashCode">
             <summary>
             Generates the hash code of this IBody.
             </summary>
@@ -150,7 +150,7 @@
             The hash code.
             </returns>
         </member>
-        <member name="M:GMOKeefe.Compiler.Parser.IBody.Equals(System.Object)">
+        <member name="M:GMOKeefe.Compiler.Parse.IBody.Equals(System.Object)">
             <summary>
             Checks if the object is equal to another object.
             </summary>
@@ -161,17 +161,17 @@
             True if they are equal, false if not.
             </returns>
         </member>
-        <member name="T:GMOKeefe.Compiler.Parser.ParentBody">
+        <member name="T:GMOKeefe.Compiler.Parse.ParentBody">
             <summary>
             An IBody that contains a list of IBody's.
             </summary>
         </member>
-        <member name="M:GMOKeefe.Compiler.Parser.ParentBody.#ctor">
+        <member name="M:GMOKeefe.Compiler.Parse.ParentBody.#ctor">
             <summary>
             Creates a new ParentBody.
             </summary>
         </member>
-        <member name="M:GMOKeefe.Compiler.Parser.ParentBody.#ctor(System.Collections.Generic.List{GMOKeefe.Compiler.Parser.IBody})">
+        <member name="M:GMOKeefe.Compiler.Parse.ParentBody.#ctor(System.Collections.Generic.List{GMOKeefe.Compiler.Parse.IBody})">
             <summary>
             Creates a new ParentBody given a list of child IBodys.
             </summary>
@@ -179,7 +179,7 @@
             The list of child IBodys that this ParentBody contains.
             </param>
         </member>
-        <member name="M:GMOKeefe.Compiler.Parser.ParentBody.AddChild(GMOKeefe.Compiler.Parser.IBody)">
+        <member name="M:GMOKeefe.Compiler.Parse.ParentBody.AddChild(GMOKeefe.Compiler.Parse.IBody)">
             <summary>
             Adds a new child IBody.
             </summary>
@@ -187,7 +187,7 @@
             The child IBody to be added.
             </param>
         </member>
-        <member name="M:GMOKeefe.Compiler.Parser.ParentBody.Associate(System.String,System.Collections.Generic.List{System.String})">
+        <member name="M:GMOKeefe.Compiler.Parse.ParentBody.Associate(System.String,System.Collections.Generic.List{System.String})">
             <summary>
             Converts a list of strings into a list of bodies. Call when encountering an opening paren for the first time.
             </summary>
@@ -201,7 +201,7 @@
             The strings in the list after the closing paren.
             </returns>
         </member>
-        <member name="M:GMOKeefe.Compiler.Parser.ParentBody.GetHashCode">
+        <member name="M:GMOKeefe.Compiler.Parse.ParentBody.GetHashCode">
             <summary>
             Generates a hash code for this ParentBody.
             </summary>
@@ -209,7 +209,7 @@
             The hash code representing the current state of the ParentBody.
             </returns>
         </member>
-        <member name="M:GMOKeefe.Compiler.Parser.ParentBody.Equals(System.Object)">
+        <member name="M:GMOKeefe.Compiler.Parse.ParentBody.Equals(System.Object)">
             <summary>
             Checks equality with any object.
             </summary>
@@ -220,7 +220,7 @@
             True if they are equal, false if not.
             </returns>
         </member>
-        <member name="M:GMOKeefe.Compiler.Parser.ParentBody.Equals(GMOKeefe.Compiler.Parser.ParentBody)">
+        <member name="M:GMOKeefe.Compiler.Parse.ParentBody.Equals(GMOKeefe.Compiler.Parse.ParentBody)">
             <summary>
             Checks equality with another ParentBody.
             </summary>
@@ -231,12 +231,12 @@
             True if the children match, false if not.
             </returns>
         </member>
-        <member name="T:GMOKeefe.Compiler.Parser.StringBody">
+        <member name="T:GMOKeefe.Compiler.Parse.StringBody">
             <summary>
             An IBody that contains a string.
             </summary>
         </member>
-        <member name="M:GMOKeefe.Compiler.Parser.StringBody.#ctor(System.String)">
+        <member name="M:GMOKeefe.Compiler.Parse.StringBody.#ctor(System.String)">
             <summary>
             Creates a new StringBody.
             </summary>
@@ -244,7 +244,7 @@
             The string that the StringBody contains.
             </param>
         </member>
-        <member name="M:GMOKeefe.Compiler.Parser.StringBody.GetString">
+        <member name="M:GMOKeefe.Compiler.Parse.StringBody.GetString">
             <summary>
             Retrieves the string that the StringBody contains.
             </summary>
@@ -252,7 +252,7 @@
             The string that the StringBody contains.
             </returns>
         </member>
-        <member name="M:GMOKeefe.Compiler.Parser.StringBody.GetHashCode">
+        <member name="M:GMOKeefe.Compiler.Parse.StringBody.GetHashCode">
             <summary>
             Creates a hash code for the current StringBody.
             </summary>
@@ -260,7 +260,7 @@
             The hash code of the string inside the StringBody.
             </returns>
         </member>
-        <member name="M:GMOKeefe.Compiler.Parser.StringBody.Equals(System.Object)">
+        <member name="M:GMOKeefe.Compiler.Parse.StringBody.Equals(System.Object)">
             <summary>
             Checks for equality with any object.
             </summary>
@@ -271,7 +271,7 @@
             True if they are equal, false if not.
             </returns>
         </member>
-        <member name="M:GMOKeefe.Compiler.Parser.StringBody.Equals(GMOKeefe.Compiler.Parser.StringBody)">
+        <member name="M:GMOKeefe.Compiler.Parse.StringBody.Equals(GMOKeefe.Compiler.Parse.StringBody)">
             <summary>
             Checks for equality with another StringBody.
             </summary>
@@ -282,12 +282,12 @@
             True if they are equal, false if not.
             </returns>
         </member>
-        <member name="T:GMOKeefe.Compiler.Parser.UnmatchedParenException">
+        <member name="T:GMOKeefe.Compiler.Parse.UnmatchedParenException">
             <summary>
             An exception that represents a lack of a matching closing mark for a corresponding opening mark.
             </summary>
         </member>
-        <member name="M:GMOKeefe.Compiler.Parser.UnmatchedParenException.#ctor(System.String)">
+        <member name="M:GMOKeefe.Compiler.Parse.UnmatchedParenException.#ctor(System.String)">
             <summary>
             Creates a new UnmatchedParenException.
             </summary>

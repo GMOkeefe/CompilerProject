@@ -1,6 +1,6 @@
 using System;
 
-namespace GMOKeefe.Compiler.Parser
+namespace GMOKeefe.Compiler.Parse
 {
     /// <summary>
     /// An exception that represents a lack of a matching closing mark for a corresponding opening mark.

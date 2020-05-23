@@ -3,7 +3,7 @@ using System.IO;
 using System.Security;
 using System.Collections.Generic;
 
-namespace GMOKeefe.Compiler.Lexer
+namespace GMOKeefe.Compiler.Lex
 {
     /// <summary>
     /// Tokenizes text files for parsing.

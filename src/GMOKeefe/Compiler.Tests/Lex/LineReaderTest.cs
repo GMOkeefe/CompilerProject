@@ -1,8 +1,8 @@
 using Xunit;
 
-using GMOKeefe.Compiler.Lexer;
+using GMOKeefe.Compiler.Lex;
 
-namespace GMOKeefe.Compiler.Tests.Lexer
+namespace GMOKeefe.Compiler.Tests.Lex
 {
     public class LineReaderTest
     {

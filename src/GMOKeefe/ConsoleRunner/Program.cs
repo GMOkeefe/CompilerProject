@@ -1,5 +1,5 @@
 ﻿using System;
-using GMOKeefe.Compiler.Lexer;
+using GMOKeefe.Compiler.Lex;
 
 namespace GMOKeefe.ConsoleRunner
 {

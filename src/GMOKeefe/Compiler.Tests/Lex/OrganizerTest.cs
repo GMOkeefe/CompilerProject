@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using Xunit;
 
-using GMOKeefe.Compiler.Lexer;
-using GMOKeefe.Compiler.Parser;
+using GMOKeefe.Compiler.Lex;
+using GMOKeefe.Compiler.Parse;
 
-namespace GMOKeefe.Compiler.Tests
+namespace GMOKeefe.Compiler.Tests.Lex
 {
     public class OrganizerTest
     {

@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 
-using GMOKeefe.Compiler.Parser;
+using GMOKeefe.Compiler.Parse;
 
-namespace GMOKeefe.Compiler.Lexer
+namespace GMOKeefe.Compiler.Lex
 {
     /// <summary>
     /// Organizes a list of string tokens into a hierarchical structure based on opening and closing symbols.

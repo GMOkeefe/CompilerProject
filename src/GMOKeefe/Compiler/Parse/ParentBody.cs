@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace GMOKeefe.Compiler.Parser
+namespace GMOKeefe.Compiler.Parse
 {
     /// <summary>
     /// An IBody that contains a list of IBody's.

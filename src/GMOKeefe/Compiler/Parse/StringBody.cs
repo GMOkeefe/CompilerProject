@@ -1,6 +1,6 @@
 using System;
 
-namespace GMOKeefe.Compiler.Parser
+namespace GMOKeefe.Compiler.Parse
 {
     /// <summary>
     /// An IBody that contains a string.

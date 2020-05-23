@@ -1,4 +1,4 @@
-namespace GMOKeefe.Compiler.Lexer
+namespace GMOKeefe.Compiler.Lex
 {
     /// <summary>
     /// The Reader interface.\

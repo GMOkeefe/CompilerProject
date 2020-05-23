@@ -1,6 +1,6 @@
-using GMOKeefe.Compiler.Lexer;
+using GMOKeefe.Compiler.Lex;
 
-namespace GMOKeefe.Compiler.Tests
+namespace GMOKeefe.Compiler.Tests.Lex
 {
     /// Acts as a TextReader, but only returns the given text.\
     /// For debugging purposes.

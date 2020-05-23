@@ -1,4 +1,4 @@
-namespace GMOKeefe.Compiler.Parser
+namespace GMOKeefe.Compiler.Parse
 {
     /// <summary>
     /// An interface that represents the union of the string and the list of IBodys.

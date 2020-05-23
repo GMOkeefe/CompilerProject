@@ -1,6 +1,6 @@
 using System;
 
-namespace GMOKeefe.Compiler.Lexer
+namespace GMOKeefe.Compiler.Lex
 {
     /// <summary>
     /// Reads the given text file in its entirety.

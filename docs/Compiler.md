@@ -11,7 +11,7 @@
 | [Tokenizer Class](#tokenizer-class) | [BoolExpr Class](#boolexpr-class) |   |
 # FullReader Class
 
-Namespace: GMOKeefe.Compiler.Lexer
+Namespace: GMOKeefe.Compiler.Lex
 
 Reads the given text file in its entirety.
 
@@ -28,7 +28,7 @@ Reads the given text file in its entirety.
 | **Read()** | string | Reads the text file. |
 # IReader Class
 
-Namespace: GMOKeefe.Compiler.Lexer
+Namespace: GMOKeefe.Compiler.Lex
 
 The Reader interface.\
 Defines the functionality necessary for the Lexer to read code.
@@ -41,7 +41,7 @@ Defines the functionality necessary for the Lexer to read code.
 | **Read()** | string | Reads the text file, either whole or in part. |
 # LineReader Class
 
-Namespace: GMOKeefe.Compiler.Lexer
+Namespace: GMOKeefe.Compiler.Lex
 
 Reads the given text file line-by-line.
 
@@ -58,7 +58,7 @@ Reads the given text file line-by-line.
 | **Read()** | string | Reads one line of the text file. |
 # Organizer Class
 
-Namespace: GMOKeefe.Compiler.Lexer
+Namespace: GMOKeefe.Compiler.Lex
 
 Organizes a list of string tokens into a hierarchical structure based on opening and closing symbols.
 
@@ -74,7 +74,7 @@ Organizes a list of string tokens into a hierarchical structure based on opening
 | **Organize()** | List\<[IBody](#ibody-class)\> | Organizes the string tokens into a list of IBodys. |
 # Tokenizer Class
 
-Namespace: GMOKeefe.Compiler.Lexer
+Namespace: GMOKeefe.Compiler.Lex
 
 Tokenizes text files for parsing.
 
@@ -91,7 +91,7 @@ Tokenizes text files for parsing.
 | **Tokens()** | List\<string\> | Tokenizes the text file in a way that is more interpretable to the compiler. |
 # IBody Class
 
-Namespace: GMOKeefe.Compiler.Parser
+Namespace: GMOKeefe.Compiler.Parse
 
 An interface that represents the union of the string and the list of IBodys.
 
@@ -103,7 +103,7 @@ An interface that represents the union of the string and the list of IBodys.
 | **GetHashCode()** | int | Generates the hash code of this IBody. |
 # ParentBody Class
 
-Namespace: GMOKeefe.Compiler.Parser
+Namespace: GMOKeefe.Compiler.Parse
 
 An IBody that contains a list of IBody's.
 
@@ -124,7 +124,7 @@ An IBody that contains a list of IBody's.
 | **GetHashCode()** | int | Generates a hash code for this ParentBody. |
 # StringBody Class
 
-Namespace: GMOKeefe.Compiler.Parser
+Namespace: GMOKeefe.Compiler.Parse
 
 An IBody that contains a string.
 
@@ -143,7 +143,7 @@ An IBody that contains a string.
 | **GetString()** | string | Retrieves the string that the StringBody contains. |
 # UnmatchedParenException Class
 
-Namespace: GMOKeefe.Compiler.Parser
+Namespace: GMOKeefe.Compiler.Parse
 
 Base class: Exception
 
