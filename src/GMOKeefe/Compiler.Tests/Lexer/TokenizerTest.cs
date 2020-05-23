@@ -12,7 +12,9 @@ namespace GMOKeefe.Compiler.Tests
         public void TestTokenize1()
         {
             // Arrange
-            Tokenizer t = new Tokenizer("../../../example/constant.mza");
+            Tokenizer t = new Tokenizer(
+                new DummyReader("(define main() -> int:\r\n(1))")
+            );
             List<string> expectedList = new List<string>(12) {
                 "(", "define", "main", "(", ")", "->", "int", ":",
                 "(", "1", ")", ")"

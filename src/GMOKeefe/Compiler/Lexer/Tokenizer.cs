@@ -110,6 +110,17 @@ namespace GMOKeefe.Compiler.Lexer
         }
 
         /// <summary>
+        /// Constructs a Tokenizer to utilize the given IReader to break down the text.
+        /// </summary>
+        /// <param name="reader">
+        /// The IReader to get the text of the file.
+        /// </param>
+        public Tokenizer(IReader reader)
+        {
+            this.reader = reader;
+        }
+
+        /// <summary>
         /// Tokenizes the text file in a way that is more interpretable to the compiler.
         /// </summary>
         /// <returns>
