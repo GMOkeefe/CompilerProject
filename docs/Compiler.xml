@@ -84,6 +84,27 @@
             One line of the text file.
             </returns>
         </member>
+        <member name="T:GMOKeefe.Compiler.Lexer.Organizer">
+            <summary>
+            Organizes a list of string tokens into a hierarchical structure based on opening and closing symbols.
+            </summary>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Lexer.Organizer.#ctor(System.Collections.Generic.List{System.String})">
+            <summary>
+            Creates a new Organizer based on a list of string tokens.
+            </summary>
+            <param name="tokens">
+            The string tokens (presumably given by the Tokenizer).
+            </param>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Lexer.Organizer.Organize">
+            <summary>
+            Organizes the string tokens into a list of IBodys.
+            </summary>
+            <returns>
+            The hierarchical list of IBodys.
+            </returns>
+        </member>
         <member name="T:GMOKeefe.Compiler.Lexer.Tokenizer">
             <summary>
             Tokenizes text files for parsing.
@@ -100,6 +121,14 @@
             Thrown when the file path is null.
             </exception>
         </member>
+        <member name="M:GMOKeefe.Compiler.Lexer.Tokenizer.#ctor(GMOKeefe.Compiler.Lexer.IReader)">
+            <summary>
+            Constructs a Tokenizer to utilize the given IReader to break down the text.
+            </summary>
+            <param name="reader">
+            The IReader to get the text of the file.
+            </param>
+        </member>
         <member name="M:GMOKeefe.Compiler.Lexer.Tokenizer.Tokens">
             <summary>
             Tokenizes the text file in a way that is more interpretable to the compiler.
@@ -107,6 +136,164 @@
             <returns>
             The tokenized list.
             </returns>
+        </member>
+        <member name="T:GMOKeefe.Compiler.Parser.IBody">
+            <summary>
+            An interface that represents the union of the string and the list of IBodys.
+            </summary>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Parser.IBody.GetHashCode">
+            <summary>
+            Generates the hash code of this IBody.
+            </summary>
+            <returns>
+            The hash code.
+            </returns>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Parser.IBody.Equals(System.Object)">
+            <summary>
+            Checks if the object is equal to another object.
+            </summary>
+            <param name="obj">
+            The other object to test.
+            </param>
+            <returns>
+            True if they are equal, false if not.
+            </returns>
+        </member>
+        <member name="T:GMOKeefe.Compiler.Parser.ParentBody">
+            <summary>
+            An IBody that contains a list of IBody's.
+            </summary>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Parser.ParentBody.#ctor">
+            <summary>
+            Creates a new ParentBody.
+            </summary>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Parser.ParentBody.#ctor(System.Collections.Generic.List{GMOKeefe.Compiler.Parser.IBody})">
+            <summary>
+            Creates a new ParentBody given a list of child IBodys.
+            </summary>
+            <param name="children">
+            The list of child IBodys that this ParentBody contains.
+            </param>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Parser.ParentBody.AddChild(GMOKeefe.Compiler.Parser.IBody)">
+            <summary>
+            Adds a new child IBody.
+            </summary>
+            <param name="child">
+            The child IBody to be added.
+            </param>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Parser.ParentBody.Associate(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Converts a list of strings into a list of bodies. Call when encountering an opening paren for the first time.
+            </summary>
+            <param name="opener">
+            The opening paren that starts this call.
+            </param>
+            <param name="rest">
+            Every string in the list after the opening paren.
+            </param>
+            <returns>
+            The strings in the list after the closing paren.
+            </returns>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Parser.ParentBody.GetHashCode">
+            <summary>
+            Generates a hash code for this ParentBody.
+            </summary>
+            <returns>
+            The hash code representing the current state of the ParentBody.
+            </returns>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Parser.ParentBody.Equals(System.Object)">
+            <summary>
+            Checks equality with any object.
+            </summary>
+            <param name="obj">
+            The object to compare with.
+            </param>
+            <returns>
+            True if they are equal, false if not.
+            </returns>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Parser.ParentBody.Equals(GMOKeefe.Compiler.Parser.ParentBody)">
+            <summary>
+            Checks equality with another ParentBody.
+            </summary>
+            <param name="p">
+            The other ParentBody.
+            </param>
+            <returns>
+            True if the children match, false if not.
+            </returns>
+        </member>
+        <member name="T:GMOKeefe.Compiler.Parser.StringBody">
+            <summary>
+            An IBody that contains a string.
+            </summary>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Parser.StringBody.#ctor(System.String)">
+            <summary>
+            Creates a new StringBody.
+            </summary>
+            <param name="body">
+            The string that the StringBody contains.
+            </param>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Parser.StringBody.GetString">
+            <summary>
+            Retrieves the string that the StringBody contains.
+            </summary>
+            <returns>
+            The string that the StringBody contains.
+            </returns>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Parser.StringBody.GetHashCode">
+            <summary>
+            Creates a hash code for the current StringBody.
+            </summary>
+            <returns>
+            The hash code of the string inside the StringBody.
+            </returns>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Parser.StringBody.Equals(System.Object)">
+            <summary>
+            Checks for equality with any object.
+            </summary>
+            <param name="obj">
+            The other object.
+            </param>
+            <returns>
+            True if they are equal, false if not.
+            </returns>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Parser.StringBody.Equals(GMOKeefe.Compiler.Parser.StringBody)">
+            <summary>
+            Checks for equality with another StringBody.
+            </summary>
+            <param name="s">
+            The other StringBody.
+            </param>
+            <returns>
+            True if they are equal, false if not.
+            </returns>
+        </member>
+        <member name="T:GMOKeefe.Compiler.Parser.UnmatchedParenException">
+            <summary>
+            An exception that represents a lack of a matching closing mark for a corresponding opening mark.
+            </summary>
+        </member>
+        <member name="M:GMOKeefe.Compiler.Parser.UnmatchedParenException.#ctor(System.String)">
+            <summary>
+            Creates a new UnmatchedParenException.
+            </summary>
+            <param name="paren">
+            The opening mark that caused this error.
+            </param>
         </member>
         <member name="T:GMOKeefe.Compiler.Syntax.BoolExpr">
             <summary>
